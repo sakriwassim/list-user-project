@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import AddUser from './components/Users/AddUser';
 import UsersList from './components/Users/UsersList';
 import ErrorModel from './components/UI/ErrorModel';
@@ -39,15 +39,14 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       <AddUser onAddUser={addUserHandler} />
       {usersList.length === 0 ? (
         <p style={{ color: 'white', textAlign: 'center' }}>No users</p>
       ) : (
         <UsersList users={usersList} />
       )}
-
-    </div>
+    </Fragment>
   );
 }
 
